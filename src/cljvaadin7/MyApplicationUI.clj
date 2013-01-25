@@ -19,14 +19,14 @@
   (.addListener button (create-button-click-listener action)))
 
 (defn -init
-  [this request]
+  [main-ui request]
   (let [layout (VerticalLayout.)
         label (Label. "Hello Clojure-Vaadin 7!")
         button (Button. "Push me!")]
     (addAction button show-click-message)
     (.addComponent layout label)
     (.addComponent layout button)
-    (.setContent this layout)))
+    (.setContent main-ui layout)))
 
   
 
