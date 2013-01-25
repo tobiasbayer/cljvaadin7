@@ -3,12 +3,12 @@
   (:gen-class
     :extends com.vaadin.ui.UI))
 
-
 (defn- show-click-message
   []
   (Notification/show "Button clicked"))
 
-(defn- create-button-click-listener [action]
+(defn- create-button-click-listener 
+  [action]
   (reify Button$ClickListener 
             (buttonClick 
               [_ evt]
