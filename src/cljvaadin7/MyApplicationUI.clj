@@ -14,7 +14,7 @@
               [_ evt]
               (action))))
 
-(defn- addAction
+(defn- add-action
   [button action]
   (.addListener button (create-button-click-listener action)))
 
@@ -23,7 +23,7 @@
   (let [layout (VerticalLayout.)
         label (Label. "Hello Clojure-Vaadin 7!")
         button (Button. "Push me!")]
-    (addAction button show-click-message)
+    (add-action button show-click-message)
     (.addComponent layout label)
     (.addComponent layout button)
     (.setContent main-ui layout)))
