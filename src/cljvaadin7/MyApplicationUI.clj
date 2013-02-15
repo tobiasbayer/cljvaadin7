@@ -19,14 +19,14 @@
   (.addListener button (create-button-click-listener action)))
 
 (defn- create-button
-  [caption]
-  (doto (Button. caption) (add-action show-click-message)))
+  [caption action]
+  (doto (Button. caption) (add-action action)))
 
 (defn- create-main-layout
   []
   (doto (VerticalLayout.)
 	        (.addComponent (Label. "Hello Clojure-Vaadin 7!"))
-	        (.addComponent (create-button "Push me!"))))
+	        (.addComponent (create-button "Push me!" show-click-message))))
 
 (defn -init
   [main-ui request]
